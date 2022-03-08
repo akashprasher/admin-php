@@ -49,6 +49,44 @@ footer {
   color: #2b2b2b !important;
 }
 
+main,
+aside {
+  padding: 1rem 0rem;
+}
+
+hr {
+  background-color: #84ce30;
+  margin-top: 0.3rem;
+  max-width: 40px;
+  height: 2px;
+  border: none;
+}
+
+main {
+  min-height: calc(50vh - 54px);
+  background-color: #fafafa;
+  display: flex;
+}
+
+aside {
+  min-height: calc(50vh - 54px);
+}
+
+.aside-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.aside-con {
+  padding: 1rem 0rem 1rem 1rem;
+}
+
+.aside-img {
+  max-width: 450px;
+  padding: 2rem 0rem;
+}
+
 footer {
   color: aliceblue;
   background-color: #2b2b2b;
