@@ -27,7 +27,7 @@
       <div class="container">
         <h1>Admin Page<span class="dot">.</span></h1>
         <hr />
-        <form action="#">
+        <form method="post" enctype="multipart/form-data" action="#">
           <div class="form-div">
             <label for="f-heading">Enter Heading</label>
             <input
@@ -35,6 +35,7 @@
               id="f-heading"
               type="text"
               placeholder="An awesome heading"
+              required
             />
           </div>
           <div class="form-div">
@@ -44,6 +45,7 @@
               id="f-message"
               type="text"
               placeholder="An awesome Welcome Message"
+              required
             ></textarea>
           </div>
           <!-- <div class="divide"></div> -->
@@ -55,6 +57,7 @@
               id="image"
               name="image"
               accept="image/png, image/jpeg"
+              required
             />
             <div class="img-help">
               <small>Chose or Drag & Drop. Supports .png and .jpg only.</small>
@@ -67,10 +70,29 @@
               id="f-img-dec"
               type="text"
               placeholder="An awesome image description"
+              required
             ></textarea>
           </div>
-          <button class="btn">Submit</button>
+          <input class="btn" type="submit" value="Submit" name="submit">
+          <!-- <button class="btn">Submit</button> -->
         </form>
+
+        <?php
+            $target_dir = "./assets/images"; 
+            $target_file = $target_dir . basename($_FILES["userImage"]["name"]);
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+            if(isset($_POST["submit"])) {
+                $check = getimagesize($_FILES["userImage"]["tmp_name"]);
+                if($check !== false) {
+                    echo "This file is an image - " . $check["mime"] . ".";
+                    $uploadOk = 1;
+                } else {
+                    echo "This file is not an image.";
+                    $uploadOk = 0;
+                }
+            }
+        ?>
       </div>
     </main>
     <footer>
