@@ -23,7 +23,7 @@
     </header>
     <main>
       <div class="container">
-        <h1>lorem ipsum <span class="dot">.</span></h1>
+        <h2>lorem ipsum <span class="dot">.</span></h2>
         <hr />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
@@ -42,7 +42,7 @@
             alt="Edvard Munch, 1893, The Scream"
           />
           <div class="aside-con">
-            <h3>Image Description<span class="dot">.</span></h3>
+            <h2>Image Description<span class="dot">.</span></h2>
             <hr />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus

@@ -98,7 +98,7 @@ aside {
 }
 
 .aside-img {
-  max-width: 450px;
+  max-width: 50%;
   padding: 2rem 0rem;
 }
 
@@ -108,7 +108,7 @@ form {
 
 form label {
   font-size: 18px;
-  font-weight: bold;
+  /* font-weight: bold; */
   padding-bottom: 0.4rem;
   /* width: 100%; */
 }
@@ -184,5 +184,13 @@ footer p {
 @media screen and (max-width: 820px) {
   .form-div {
     max-width: 100%;
+  }
+
+  .aside-img {
+    max-width: 100%;
+  }
+
+  .aside-content {
+    flex-direction: column;
   }
 }

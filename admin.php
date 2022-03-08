@@ -64,10 +64,10 @@
             </div>
           </div>
           <div class="form-div">
-            <label for="f-img-dec">Image Description</label>
+            <label for="f-description">Image Description</label>
             <textarea
-              name="f-img-dec"
-              id="f-img-dec"
+              name="f-description"
+              id="f-description"
               type="text"
               placeholder="An awesome image description"
               
@@ -77,8 +77,9 @@
           <!-- <button class="btn">Submit</button> -->
         </form>
         <?php
-          $target_dir = "uploads/";
-          $target_file = $target_dir . basename($_FILES["userImage"]["name"]);
+          $target_dir = "assets/uploads/";
+          $target_file = $target_dir.basename($_FILES["userImage"]["name"]);
+          echo $POST['userImage'];
           $uploadOk = 1;
           $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
           
@@ -125,7 +126,6 @@
                   {
                       echo "The file " . basename($_FILES["userImage"]["name"]) . " has been uploaded.";
                       header('Location: ./');
-                      exit;
                   }                  
                 else
                   {
