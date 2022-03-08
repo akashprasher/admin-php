@@ -11,7 +11,7 @@
     <header>
       <nav class="container">
         <div class="navigation-bar">
-          <div><h3>php.</h3></div>
+          <div><h3>php<span class="dot">.</span></h3></div>
           <div class="nav-links">
             <ul>
               <li><a class="active" href="./">Home</a></li>
@@ -23,7 +23,7 @@
     </header>
     <main>
       <div class="container">
-        <h1>lorem ipsum</h1>
+        <h1>lorem ipsum <span class="dot">.</span></h1>
         <hr />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
@@ -42,7 +42,7 @@
             alt="Edvard Munch, 1893, The Scream"
           />
           <div class="aside-con">
-            <h3>Image Description</h3>
+            <h3>Image Description<span class="dot">.</span></h3>
             <hr />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
@@ -54,6 +54,6 @@
         </div>
       </div>
     </aside>
-    <footer><p>php. &copy; 2021</p></footer>
+    <footer><p>php<span class="dot">.</span> &copy; 2021</p></footer>
   </body>
 </html>

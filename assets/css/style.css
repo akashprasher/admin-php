@@ -44,14 +44,21 @@ footer {
   text-decoration: none;
 }
 
-.active,
+.active {
+  color: #84ce30 !important;
+}
+
 .nav-links ul li a:hover {
-  color: #2b2b2b !important;
+  box-shadow: 0px 2px #84ce30;
 }
 
 main,
 aside {
   padding: 1rem 0rem;
+}
+
+.dot {
+  color: #84ce30;
 }
 
 hr {
@@ -68,6 +75,10 @@ main {
   display: flex;
 }
 
+.main-admin {
+  min-height: calc(100vh - 108px) !important;
+}
+
 aside {
   min-height: calc(50vh - 54px);
 }
@@ -82,9 +93,80 @@ aside {
   padding: 1rem 0rem 1rem 1rem;
 }
 
+.aside-con p {
+  padding: 0.5rem 0rem;
+}
+
 .aside-img {
   max-width: 450px;
   padding: 2rem 0rem;
+}
+
+form {
+  padding: 1rem 0rem;
+}
+
+form label {
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 0.4rem;
+  /* width: 100%; */
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.8rem;
+  max-width: 50%;
+}
+
+input,
+textarea {
+  font-family: "Fredoka", sans-serif;
+}
+
+.form-div input,
+.form-div textarea {
+  padding: 0.4rem 0.2rem;
+  /* width: 50%; */
+  border: none;
+  border-bottom: 2px solid #84ce30;
+}
+
+.form-div input:focus-visible,
+.form-div textarea:focus-visible {
+  border-bottom: 2px solid #458100;
+  outline: none;
+}
+
+.divide {
+  width: 50%;
+  border-bottom: 1px dotted#458100;
+}
+
+.input-image {
+  /* opacity: 0; */
+  cursor: pointer;
+  padding: 1rem 1rem !important;
+  border: 2px dotted #84ce30 !important;
+}
+
+.img-help small {
+  color: #84ce30;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #84ce30;
+  color: #fafafa;
+  border: 1px solid #84ce30;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+}
+
+.btn:hover {
+  color: #84ce30;
+  background-color: transparent;
 }
 
 footer {
@@ -95,4 +177,12 @@ footer {
 footer p {
   width: 100%;
   text-align: center;
+}
+
+/* 820px */
+
+@media screen and (max-width: 820px) {
+  .form-div {
+    max-width: 100%;
+  }
 }
