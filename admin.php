@@ -27,7 +27,7 @@
       <div class="container">
         <h1>Admin Page<span class="dot">.</span></h1>
         <hr />
-        <form method="post" enctype="multipart/form-data" action="#">
+        <form method="post" action="/">
           <div class="form-div">
             <label for="f-heading">Enter Heading</label>
             <input
@@ -50,17 +50,15 @@
           </div>
           <!-- <div class="divide"></div> -->
           <div class="form-div">
-            <label for="userImage">Upload an Image</label>
+            <label for="f-image">Enter Image Name</label>
             <input
-              class="input-image"
-              type="file"
-              id="userImage"
-              name="userImage"
-              accept="image/png, image/jpeg"
-              
+              type="text"
+              id="f-image"
+              name="f-image"
+              placeholder="1.jpg"
             />
             <div class="img-help">
-              <small>Chose or Drag & Drop. Supports .png and .jpg only.</small>
+              <small>Available images are 1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg</small>
             </div>
           </div>
           <div class="form-div">
@@ -76,66 +74,6 @@
           <input class="btn" type="submit" value="Submit" name="submit">
           <!-- <button class="btn">Submit</button> -->
         </form>
-        <?php
-          $target_dir = "assets/uploads/";
-          $target_file = $target_dir.basename($_FILES["userImage"]["name"]);
-          echo $POST['userImage'];
-          $uploadOk = 1;
-          $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-          
-          if (isset($_POST["submit"]))
-          {
-              $check = getimagesize($_FILES["userImage"]["tmp_name"]);
-          
-              if ($check !== false)
-              {
-                  echo "File is an image - " . $check["mime"] . ".";
-                  $uploadOk = 1;
-              }
-              else
-              {
-                  echo "File is not an image.";
-                  $uploadOk = 0;
-              }
-          
-              if (file_exists($target_file))
-              {
-                  echo "Sorry, file already exists.";
-                  $uploadOk = 0;
-              }
-          
-              if ($FILES["fileToUpload"]["size"] > 500000)
-              {
-                  echo "Sorry, file is too large.";
-                  $uploadOk = 0;
-              }
-          
-              if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif")
-              {
-                  echo "Sorry, only JPG, JPEG, PNG and GIF files are allowed.";
-                  $uploadOk = 0;
-              }
-          
-              if ($uploadOk == 0)
-              {
-                  echo "Sorry, your file was not uploaded.";
-              }
-              else
-              {
-                if (move_uploaded_file($_FILES["userImage"]["tmp_name"], $target_file))
-                  {
-                      echo "The file " . basename($_FILES["userImage"]["name"]) . " has been uploaded.";
-                      header('Location: ./');
-                  }                  
-                else
-                  {
-                      echo "Sorry, there was an error uploading your file.";
-                  }
-              }
-          }
-          ?>
-
-
       </div>
     </main>
     <footer>
