@@ -23,13 +23,27 @@
     </header>
     <main>
       <div class="container">
-        <h2>lorem ipsum <span class="dot">.</span></h2>
+        <h2>
+        <?php 
+            if($_POST['f-heading']){
+              echo $_POST['f-heading'];
+            } else {
+              echo "Lorem ipsum";
+            } 
+        ?>
+        <span class="dot">.</span></h2>
         <hr />
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
-          laboriosam aspernatur iure quo sint, aliquid quod dolorem quam quidem
-          earum delectus repudiandae molestiae modi quae deleniti eaque minus
-          esse natus?
+          <?php 
+            if($_POST['f-message']){
+              echo $_POST['f-message'];
+            } else {
+              echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+                    laboriosam aspernatur iure quo sint, aliquid quod dolorem quam quidem
+                    earum delectus repudiandae molestiae modi quae deleniti eaque minus
+                    esse natus?";
+            } 
+          ?>
         </p>
       </div>
     </main>
@@ -38,17 +52,31 @@
         <div class="aside-content">
           <img
             class="aside-img"
-            src="./assets/images/img1.jpg"
-            alt="Edvard Munch, 1893, The Scream"
+            <?php
+            $filename =  $_POST['f-image'];
+            if($_POST['f-image']){
+              echo "src=\"./assets/uploads/$filename\"";
+            } else {
+              echo "src=\"./assets/images/bg.webp\"";
+            }
+            ?>
+            alt="main-bg"
           />
           <div class="aside-con">
             <h2>Image Description<span class="dot">.</span></h2>
+
             <hr />
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-              maiores, inventore veritatis exercitationem dolorum commodi magni
-              explicabo repudiandae eligendi harum culpa iste quos sed. Sed et
-              in quos mollitia impedit!
+            <?php 
+                if($_POST['f-description']){
+                  echo $_POST['f-description'];
+                } else {
+                  echo "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum
+                        laboriosam aspernatur iure quo sint, aliquid quod dolorem quam quidem
+                        earum delectus repudiandae molestiae modi quae deleniti eaque minus
+                        esse natus?";
+                } 
+            ?>
             </p>
           </div>
         </div>
